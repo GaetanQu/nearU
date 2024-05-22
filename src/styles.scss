@@ -1,0 +1,162 @@
+// SCSS Theme Variables
+$themes: (
+  light: (
+    text-50: #eef1f6,
+    text-100: #dde3ee,
+    text-200: #bbc8dd,
+    text-300: #99accc,
+    text-400: #7790bb,
+    text-500: #5574aa,
+    text-600: #445d88,
+    text-700: #334666,
+    text-800: #222f44,
+    text-900: #111722,
+    text-950: #090c11,
+    text: #080b10,
+
+    background-50: #ecf1f9,
+    background-100: #d9e3f2,
+    background-200: #b3c6e6,
+    background-300: #8caad9,
+    background-400: #668dcc,
+    background-500: #4071bf,
+    background-600: #335a99,
+    background-700: #264473,
+    background-800: #192d4d,
+    background-900: #0d1726,
+    background-950: #060b13,
+    background: #f3f6fb,
+    
+    primary-50: #f0f2f5,
+    primary-100: #e0e4eb,
+    primary-200: #c1cad7,
+    primary-300: #a2afc3,
+    primary-400: #8494ae,
+    primary-500: #65799a,
+    primary-600: #51617b,
+    primary-700: #3c495d,
+    primary-800: #28313e,
+    primary-900: #14181f,
+    primary-950: #0a0c0f,
+    primary: #303a4a,
+
+    secondary-50: #f0f2f4,
+    secondary-100: #e1e4ea,
+    secondary-200: #c4cad4,
+    secondary-300: #a6afbf,
+    secondary-400: #8995a9,
+    secondary-500: #6b7a94,
+    secondary-600: #566276,
+    secondary-700: #404959,
+    secondary-800: #2b313b,
+    secondary-900: #15181e,
+    secondary-950: #0b0c0f,
+    secondary: #a6afbf,
+
+    accent-50: #f0f2f5,
+    accent-100: #e0e4eb,
+    accent-200: #c2cad6,
+    accent-300: #a3afc2,
+    accent-400: #8595ad,
+    accent-500: #667a99,
+    accent-600: #52627a,
+    accent-700: #3d495c,
+    accent-800: #29313d,
+    accent-900: #14181f,
+    accent-950: #0a0c0f,
+    accent: #8595ad,
+
+    icon: #303A49,
+  ),
+  dark: (
+    text-50: #090c11,
+    text-100: #121721,
+    text-200: #232f43,
+    text-300: #354664,
+    text-400: #465e86,
+    text-500: #5875a7,
+    text-600: #7991b9,
+    text-700: #9bacca,
+    text-800: #bcc8dc,
+    text-900: #dee3ed,
+    text-950: #eef1f6,
+    text: #eef1f6,
+
+    background-50: #070c13,
+    background-100: #0e1825,
+    background-200: #1b304b,
+    background-300: #294870,
+    background-400: #366096,
+    background-500: #4478bb,
+    background-600: #6993c9,
+    background-700: #8faed6,
+    background-800: #b4c9e4,
+    background-900: #dae4f1,
+    background-950: #ecf1f8,
+    background: #04070b,
+
+    primary-50: #0a0c0f,
+    primary-100: #14181f,
+    primary-200: #28313e,
+    primary-300: #3c495d,
+    primary-400: #51617b,
+    primary-500: #65799a,
+    primary-600: #8494ae,
+    primary-700: #a2afc3,
+    primary-800: #c1cad7,
+    primary-900: #e0e4eb,
+    primary-950: #f0f2f5,
+    primary: #b5bfcf,
+    
+    secondary-50: #0b0c0f,
+    secondary-100: #15181e,
+    secondary-200: #2b313b,
+    secondary-300: #404959,
+    secondary-400: #566276,
+    secondary-500: #6b7a94,
+    secondary-600: #8995a9,
+    secondary-700: #a6afbf,
+    secondary-800: #c4cad4,
+    secondary-900: #e1e4ea,
+    secondary-950: #f0f2f4,
+    secondary: #404959,
+
+    accent-50: #0a0c0f,
+    accent-100: #14181f,
+    accent-200: #29313d,
+    accent-300: #3d495c,
+    accent-400: #52627a,
+    accent-500: #667a99,
+    accent-600: #8595ad,
+    accent-700: #a3afc2,
+    accent-800: #c2cad6,
+    accent-900: #e0e4eb,
+    accent-950: #f0f2f5,
+    accent: #52627a,
+
+    icon: #303A49,
+  )
+);
+
+// Mixin for applying theme variables
+@mixin apply-theme($theme) {
+  @each $key, $value in map-get($themes, $theme) {
+    --#{$key}: #{$value};
+  }
+}
+
+// Apply light theme
+:root[data-theme="light"] {
+  @include apply-theme(light);
+}
+
+// Apply dark theme
+:root[data-theme="dark"] {
+  @include apply-theme(dark);
+}
+
+//Fonts
+body{
+  font-family: "router";
+  font-style: normal;
+}
